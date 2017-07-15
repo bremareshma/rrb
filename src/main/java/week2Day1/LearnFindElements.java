@@ -16,7 +16,7 @@ public class LearnFindElements {
 		driver.get("http://legacy.crystalcruises.com/Calendar.aspx");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);		
 		driver.manage().window().maximize();
-		
+		driver.findElementByLinkText("Get-a-Quote");
 		List<WebElement> allQuote = driver.findElementsByLinkText("Get-a-Quote");
 		System.out.println(allQuote.size());		
 		allQuote.get(2).click();

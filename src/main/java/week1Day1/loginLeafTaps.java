@@ -13,7 +13,7 @@ public class loginLeafTaps {
 		ChromeDriver driver = new ChromeDriver();
 		
 		//Load URL
-		driver.get("http://leaftaps.com");
+		driver.get("http://perftest.leaftaps.com");
 		
 		//Maximize
 		driver.manage().window().maximize();

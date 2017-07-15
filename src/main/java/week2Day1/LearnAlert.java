@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class LearnAlert {
 
@@ -12,7 +13,8 @@ public class LearnAlert {
 		// Syntax
 		// ClassName obj= new ClassName();
 		ChromeDriver driver = new ChromeDriver();
-
+		//FirefoxDriver d = new FirefoxDriver();
+		
 		// Load URL
 		driver.get("https://www.irctc.co.in/eticketing/loginHome.jsf");
 
@@ -35,7 +37,7 @@ public class LearnAlert {
 		// Maximize
 		driver.manage().window().maximize();
 
-		driver.findElementById("loginbutton").click();
+		driver.findElementById("loginbuttoN1").click();
 		Alert promptAlert = driver.switchTo().alert();
 		String text = promptAlert.getText();
 		System.out.println(text);
