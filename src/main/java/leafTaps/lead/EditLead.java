@@ -7,7 +7,7 @@ import wrappers.LeafTapsWrapper;
 
 public class EditLead extends LeafTapsWrapper {	
 
-	@Test
+	@Test(groups = {"regression"},dependsOnGroups = {"sanity"})
 	public void editLead() throws Exception{		
 		clickByLink("Leads");
 		clickByLink("Find Leads");

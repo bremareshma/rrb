@@ -1,15 +1,13 @@
 package leafTaps.lead;
 
-
-
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import wrappers.LeafTapsWrapper;
 
 
 public class DeleteLead extends LeafTapsWrapper {
 
-	@Test
+	@Test(groups = {"sanity"}, dependsOnGroups = {"smoke"})
 	public void deleteLead() throws Exception {		
 		clickByLink("Leads");
 		clickByLink("Find Leads");
