@@ -1,4 +1,4 @@
-package week1.day1.java;
+package week1Day1java;
 
 public class LearnJava {
 

@@ -5,10 +5,12 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class CreateLead{
+import wrappers.LeafTapsWrapper;
 
-	@Test
-	public void login() throws Exception{
+public class CreateLead extends LeafTapsWrapper{
+
+	@Test(dataProvider = "fetchData")
+	public void login(String cName, String fName, String lName) throws Exception{
 		
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 		ChromeDriver driver = new ChromeDriver();
@@ -23,9 +25,9 @@ public class CreateLead{
 		driver.findElementByLinkText("CRM/SFA").click();
 		driver.findElementByLinkText("Leads").click();
 		driver.findElementByLinkText("Create Lead").click();
-		driver.findElementById("createLeadForm_companyName").sendKeys("TestLeaf");
-		driver.findElementById("createLeadForm_firstName").sendKeys("Gopinath");
-		driver.findElementById("createLeadForm_lastName").sendKeys("Jayakumar");
+		driver.findElementById("createLeadForm_companyName").sendKeys(cName);
+		driver.findElementById("createLeadForm_firstName").sendKeys(fName);
+		driver.findElementById("createLeadForm_lastName").sendKeys(lName);
 		driver.findElementByXPath("(//input[@name='submitButton'])").click();
 		driver.close();
 	}
